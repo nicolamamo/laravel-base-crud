@@ -16,8 +16,10 @@ class StudentsTableSeeder extends Seeder
         for ($i=0; $i <10 ; $i++) {
             $new_student = new Student();
             $new_student->name=$faker->name;
-            $new_student->surname=$faker->family_name;
-            $new_student->number=$faker->number;
+            $new_student->surname=$faker->lastName;
+            $new_student->number=$faker->randomNumber();
+            $new_student->mail=$faker->email;
+
             $new_student->save();
         }
     }
